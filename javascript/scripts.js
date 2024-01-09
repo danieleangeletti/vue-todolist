@@ -5,18 +5,23 @@ createApp({
         return {
             tasks: [
                 {
-                    text: 'Fare i compiti',
+                    text: 'Doing homework',
                     done: false
                 },
                 {
-                    text: 'Fare la spesa',
+                    text: 'Go shopping',
                     done: true
                 },
                 {
-                    text: 'Fare il bucato',
+                    text: 'Do the laundry',
                     done: false
                 }
             ]
         };
+    },
+    methods: {
+        delete_task(i){
+            this.tasks.splice(i, 1);
+        }
     }
 }).mount('#app');

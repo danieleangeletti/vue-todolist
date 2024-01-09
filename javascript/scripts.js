@@ -36,6 +36,12 @@ createApp({
 
             this.tasks.push(new_task);
             this.new_task_text = '';
+        },
+        add_task_with_enter(event){
+
+            if (event.keyCode === 13) {
+                this.add_task();
+            }
         }
     }
 }).mount('#app');

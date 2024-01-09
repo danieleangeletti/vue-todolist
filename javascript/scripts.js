@@ -42,6 +42,9 @@ createApp({
             if (event.keyCode === 13) {
                 this.add_task();
             }
+        },
+        is_done(i){
+            this.tasks[i].done = !this.tasks[i].done;
         }
     }
 }).mount('#app');

@@ -3,11 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
-            new_task: {
-                text: '',
-                done: false
-            },
-
+            new_task_text: '',
             tasks: [
                 {
                     text: 'Doing homework',
@@ -28,8 +24,18 @@ createApp({
         delete_task(i){
             this.tasks.splice(i, 1);
         },
-        // add_task(){
-        //     this.tasks.push(this.new_task);
-        // }
+        add_task(){
+            if (this.new_task_text.length == 0) {
+                return;
+            }
+
+            let new_task = {
+                text: this.new_task_text,
+                done: false,
+            };
+
+            this.tasks.push(new_task);
+            this.new_task_text = '';
+        }
     }
 }).mount('#app');
